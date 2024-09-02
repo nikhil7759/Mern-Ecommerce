@@ -1,0 +1,33 @@
+.categories__deal__countdown__timer {
+    margin-bottom: 20px;
+    overflow: hidden;
+    margin-left: -30px;
+}
+.cd-item {
+	width: 25%;
+	float: left;
+	margin-bottom: 25px;
+	text-align: center;
+	position: relative;
+}
+.cd-item:after {
+	position: absolute;
+	right: 0;
+	top: 7px;
+	content: ":";
+	font-size: 24px;
+	font-weight: 700;
+	color: #3d3d3d;
+}
+.cd-item span {
+	color: #111111;
+	font-weight: 700;
+	display: block;
+	font-size: 70px;
+}
+.cd-item p {
+	margin-bottom: 0;
+}
+.cd-item:last-child:after {
+	display: none;
+}

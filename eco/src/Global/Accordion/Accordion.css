@@ -1,0 +1,21 @@
+.boxlow{
+    margin-bottom: 25px;
+}
+.accordion-no-outline .MuiAccordion-root {
+    outline: none;
+  }
+  .boxlow .MuiAccordion-root {
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove shadow if necessary */
+  }
+  
+  .boxlow .MuiAccordionSummary-root {
+    border-bottom: none; /* Remove bottom border of summary */
+  }
+  
+  .boxlow .MuiAccordionDetails-root {
+    border-top: none; /* Remove top border of details */
+  }
+  .chekbo{
+    margin-bottom: 25px;
+  }

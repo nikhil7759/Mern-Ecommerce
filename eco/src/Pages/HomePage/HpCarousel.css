@@ -1,0 +1,48 @@
+.slider-container {
+  width: 100%; /* Make the slider take up the full width of its container */
+  max-width: 1400px; /* Set a maximum width, e.g., 1400px */
+  margin: 0 auto; /* Center the slider */
+  position: relative; /* Positioning context for arrows */
+}
+
+.slider-container img {
+  width: 100%; /* Ensure the image takes up 100% of the slider container width */
+  height: 600px; /* Maintain the aspect ratio */
+  object-fit: cover; /* Ensure the image covers the entire container without distortion */
+}
+
+.custom-previous-arrow,
+.custom-nextious-arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 24px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px;
+  transform: translateY(-50%);
+  user-select: none;
+}
+
+.custom-prev-arrow {
+  left: 10px;
+}
+
+.custom-next-arrow {
+  right: 10px;
+}
+.slick-next:before,
+.slick-prev:before {
+  color: #000;
+}
+.slider-container {
+  position: relative;
+}
+
+.slick-slide img {
+  width: 100%;
+  height: auto;
+  /* Ensure images are responsive and cover the carousel area */
+}

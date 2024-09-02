@@ -1,0 +1,22 @@
+.loader__main {
+    position: fixed;           /* Position it fixed to the viewport */
+    top: 50%;                  /* Center vertically */
+    left: 50%;                 /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to be truly centered */
+    z-index: 9999;             /* Ensure it's on top of other elements */
+    display: flex;             /* Use flexbox to center the loader */
+    justify-content: center;
+    align-items: center;
+    width: 100%;               /* Full width */
+    height: 100vh;             /* Full viewport height */
+    background: #fff; /* Dark, semi-transparent background for blur effect */
+
+     /* Safari support for backdrop-filter */
+  }
+  
+  @media (max-width: 768px) {
+    .loader__main {
+      height: 100vh;  /* Ensure full height on smaller screens */
+    }
+  }
+  
