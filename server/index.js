@@ -18,7 +18,7 @@ dataBaseConnection();
 // API Endpoints
 
 // Route to get all users with filters
-app.get("/api/users", async (req, res) => {
+app.get("/", async (req, res) => {
   try {
     const { gender, color,categories } = req.query; // Extract query parameters
     let query = {};
