@@ -4,6 +4,8 @@ import Button from "@mui/material/Button";
 import { auth } from "../../firebase/firebase";
 import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { useToast } from "../../Global/Toast/Toast";
+import "../../Global/Navigation/Navbar.css"
+import "./Login.css"
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -51,33 +53,45 @@ const Login = () => {
 
   return (
     <>
-      <h3>Login In</h3>
+     
       <form onSubmit={formHandler}>
-        <label htmlFor="email">
-          Enter Email
-          <input
-            type="text"
+        <div className="container">
+          <div className="header">
+            <div className="text">LOG IN</div>
+            <div className="underline"></div>
+          </div>
+          <div className="inputs">
+            <div className="input">
+            <i className="bi bi-person-circle"></i>
+              <input type="email" placeholder="Enter Email"
             id="email"
             onChange={loginEmailHandler}
-            value={email}
-          />
-        </label>
-        <label htmlFor="password">
-          Enter Password
-          <input
-            type="password"
-            id="password"
+            value={email}/>
+            </div>
+            <div className="input">
+            <i className="bi bi-key-fill"></i>
+              <input type="password" placeholder="Enter Password" id="password"
             onChange={loginPassHandler}
-            value={password}
-          />
-        </label>
-        <Button variant="contained" type="submit">
+            value={password}/>
+            </div>
+          </div>
+          <div className="new__user">
+            <p>New User? &nbsp; <NavLink to ='/signup'>Sign Up</NavLink></p>
+          </div>
+          <div className="button_section">
+          <Button variant="contained" type="submit" className="submitbtn">
           Log In
         </Button>
-        <p>New User?</p>
-        <NavLink to="/signup">
-          <Button variant="contained">Sign Up</Button>
-        </NavLink>
+
+          </div>
+          
+       
+        </div>
+        
+        
+
+
+
       </form>
     </>
   );

@@ -24,7 +24,8 @@ export default function Sorting({ onSortChange }) {
         <Select
           labelId="sorting-select-label"
           sx={{
-            fontSize: { xs: '0.75rem', sm: '0.75rem' }, // Smaller font size for different screen sizes
+            fontSize: { xs: '0.75rem', sm: '0.75rem' },
+            width:{xs:'120%'}, // Smaller font size for different screen sizes
           }}
           id="sorting-select"
           value={sortOption}

@@ -10,10 +10,10 @@ const Footer = () => {
   return (
     <>
     <footer className='footer__main'>
-        <div class="footer-content">
-            <h3>Foolish Developer</h3>
-            <p>Raj Template is a blog website where you will find great tutorials on web design and development. Here each tutorial is beautifully described step by step with the required source code.</p>
-            <ul class="socials">
+        <div className="footer-content">
+            <h3>SHOPING</h3>
+            <p>Your one-stop destination for all your shopping needs, offering a wide range of products across various categories. Whether you're looking for the latest fashion trends, home appliances, electronics, beauty products, or groceries, we have it all. Our user-friendly interface allows you to easily navigate through categories and find exactly what you need with just a few clicks.</p>
+            <ul className="socials">
                 <li><NavLink><FaFacebook/></NavLink></li>
                 <li><NavLink><FaSquareXTwitter/></NavLink></li>
                 <li><NavLink><IoLogoWhatsapp/></NavLink></li>
@@ -21,7 +21,7 @@ const Footer = () => {
                
             </ul>
         </div>
-        <div class="footer-bottom">
+        <div className="footer-bottom">
             <p>Made By &copy; <a href="#">Nikhil</a>  </p>
                     
         </div>

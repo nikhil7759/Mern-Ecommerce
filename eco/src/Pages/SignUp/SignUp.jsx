@@ -1,28 +1,35 @@
 import { useState } from "react";
 import Button from "@mui/material/Button";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useToast } from "../../Global/Toast/Toast"; // Import toast functions
+import "./SignUp.css"
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState(""); // Added state for confirm password
+  const { notifySuccess, notifyError } = useToast(); // Destructure notify functions
+  const navigate = useNavigate(); // Get the navigation function
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your form submission logic here
+
+    // Check if passwords match
     if (password !== confirmPassword) {
-      console.error("Passwords do not match!");
+      notifyError("Passwords do not match!"); // Display error toast
       return;
     }
+
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      console.log("account created");
+      notifySuccess("Account successfully created!"); // Display success toast
+      navigate("/login"); // Navigate to login page after successful sign-up
     } catch (err) {
-      console.log(err);
+      notifyError("Sign up failed. Please try again."); // Display error toast
+      console.error(err);
     }
-    // Proceed with the sign-up logic
   };
 
   const emailHandler = (e) => {
@@ -37,51 +44,58 @@ const SignUp = () => {
     setConfirmPassword(e.target.value);
   };
 
-  console.log("Email:", email);
-  console.log("Password:", password);
-  console.log("Confirm Password:", confirmPassword);
-
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <h3>Sign Up</h3>
-        <label htmlFor="email">
-          {" "}
-          {/* Added id for accessibility */}
-          Enter Email
-          <input type="text" id="email" onChange={emailHandler} value={email} />
-        </label>
-        <label htmlFor="password">
-          {" "}
-          {/* Added id for accessibility */}
-          Enter Password
-          <input
-            type="password"
-            id="password"
-            onChange={passwordHandler}
-            value={password}
-          />
-        </label>
-        <label htmlFor="confirm-password">
-          {" "}
-          {/* Added id for accessibility */}
-          Re-enter Password
-          <input
-            type="password"
-            id="confirm-password"
-            onChange={confirmPasswordHandler}
-            value={confirmPassword}
-          />
-        </label>
-        <Button variant="contained" type="submit">
-          {" "}
-          {/* Added type="submit" */}
-          Sign Up
-        </Button>
-        <p>Already have an account?</p>
-        <NavLink to="/login">
-          <Button variant="contained">Login</Button>
-        </NavLink>
+        <div className="container">
+          <div className="header">
+            <div className="text">SIGN UP</div>
+            <div className="underline"></div>
+          </div>
+          <div className="inputs">
+            <div className="input">
+              <i className="bi bi-person-circle"></i>
+              <input
+                type="email"
+                placeholder="Enter Email"
+                id="email"
+                onChange={emailHandler}
+                value={email}
+              />
+            </div>
+            <div className="input">
+              <i className="bi bi-key-fill"></i>
+              <input
+                type="password"
+                placeholder="Enter Password"
+                id="password"
+                onChange={passwordHandler}
+                value={password}
+              />
+            </div>
+            <div className="input">
+              <i className="bi bi-key-fill"></i>
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                id="confirm-password"
+                onChange={confirmPasswordHandler}
+                value={confirmPassword}
+              />
+            </div>
+          </div>
+          <div className="new__user">
+            <p>
+              Already have an account? &nbsp;
+              <NavLink to="/login">Login</NavLink>
+            </p>
+          </div>
+          <div className="button_section">
+            <Button variant="contained" type="submit" className="submitbtn">
+              Sign Up
+            </Button>
+          </div>
+        </div>
       </form>
     </>
   );

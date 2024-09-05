@@ -21,7 +21,7 @@
 }
 
 .main-section {
-  padding-top: 100px; /* Space for the sticky sidebar and any fixed header */
+  padding-top: 10px; /* Space for the sticky sidebar and any fixed header */
   padding-bottom: 100px;
   display: flex;
 }
@@ -30,7 +30,7 @@
 .side__shopbar {
   position: sticky;
   top: 0; /* Adjust if you have a fixed header or change this value based on header height */
-  
+  margin-top: 86px;
   overflow-y: auto; /* Allows vertical scrolling if content overflows */
   background: #f9f9f9; /* Optional: Adds background color to make sidebar distinct */
   padding: 0 15px; /* Optional: Adds padding to the sidebar */
@@ -70,4 +70,13 @@
 
 .price_range{
   padding: 15px;
+}
+@media (max-width:768px) {
+  .main-section{
+    padding-top: 0;
+  }
+  .sorting{
+    justify-content: center;
+  }
+  
 }

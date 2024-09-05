@@ -11,8 +11,8 @@
   
   @media (max-width: 600px) {
     .fav-button {
-      top: 5px; 
-      right: 5px; 
+      top: 25px; 
+      right: 25px; 
       padding: 3px;
     }
   }

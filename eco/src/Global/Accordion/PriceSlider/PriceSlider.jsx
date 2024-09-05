@@ -20,7 +20,10 @@ export default function PriceRangeSlider({ onChange }) {
   };
 
   return (
-    <Box sx={{ width: 250 }}>
+    <Box  sx={{
+      width: { xs: "100%", sm: 250 },
+      p: { xs: "20px 20px 0px 20px", sm: 0 }, // 100% width on extra-small devices, 250px on small and larger devices
+    }}>
       <Slider
         getAriaLabel={() => "Price range"}
         value={value}

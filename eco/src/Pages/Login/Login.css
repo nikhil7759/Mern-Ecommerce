@@ -1,0 +1,107 @@
+.conatiner{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 200px;
+    background: #fff;
+    padding-bottom: 30px;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    margin-top: 30px;
+}
+.text{
+    color: #000;
+    font-size: 48px;
+    font-weight: 700;
+}
+.underline{
+    width: 61px;
+    height: 6px;
+    background: red;
+    border-radius: 9px;
+}
+.inputs{
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.input{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 480px;
+    height: 80px;
+    background: #eaeaea;
+    border-radius: 6px;
+    margin-bottom: 0;
+}
+.input input{
+    height: 50px;
+    width: 400px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #000;
+    font-size: 19px;
+}
+.bi-person-circle{
+    font-size: 25px;
+    margin: 0 30px;
+}
+.bi-key-fill{
+    font-size: 25px;
+    margin: 0 30px;
+}
+.submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 60px;
+    color: #fff;
+    background: red;
+    border-radius: 0;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.submit-container{
+    display: flex;
+    gap: 30px;
+    margin: 30px auto;
+    justify-content: center;
+}
+.new__user {
+    text-align: center;
+    margin-top: 10px;
+}
+.sigin{
+    cursor: pointer;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 0s 600000s, color 0s 600000s !important;
+}
+.button_section {
+    text-align: center;
+    
+}
+.button_section .submitbtn {
+    padding: 15px 40px 15px 40px;
+}
+@media (max-width:768px) {
+    .inputs{
+        padding: 20px;
+        margin-top: 20px;
+    }
+    .input{
+        width: 100%;
+    }
+    
+}

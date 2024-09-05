@@ -1,15 +1,41 @@
-import { createContext, useReducer } from "react"
-import FavReducer from "./FavReducer"
+import { createContext, useContext, useState, useEffect } from "react";
 
-export const FavContext = createContext()
+const FavoriteContext = createContext();
 
-const FavContextProvider = ({children}) => {
-    const [ fav, dispatch] = useReducer(FavReducer,[])
+export const FavoriteProvider = ({ children }) => {
+  // Load favorite items from localStorage or initialize with an empty array
+  const [favouriteItem, setFavouriteItem] = useState(() => {
+    const savedFavorites = localStorage.getItem("favouriteItem");
+    return savedFavorites ? JSON.parse(savedFavorites) : [];
+  });
+
+  // Add item to favorites and store in localStorage
+  const addToFavorite = (item) => {
+    setFavouriteItem((prevItems) => {
+      const updatedItems = [...prevItems, item];
+      localStorage.setItem("favouriteItem", JSON.stringify(updatedItems)); // Store in localStorage
+      return updatedItems;
+    });
+  };
+
+  // Remove item from favorites and update localStorage
+  const removeFavorite = (item) => {
+    setFavouriteItem((prevItems) => {
+      const updatedItems = prevItems.filter((favItem) => favItem !== item);
+      localStorage.setItem("favouriteItem", JSON.stringify(updatedItems)); // Update localStorage
+      return updatedItems;
+    });
+  };
+
   return (
-    <FavContext.Provider value={{fav,dispatch}}>
-        {children}
-    </FavContext.Provider>
-  )
-}
+    <FavoriteContext.Provider
+      value={{ favouriteItem, addToFavorite, removeFavorite }}
+    >
+      {children}
+    </FavoriteContext.Provider>
+  );
+};
 
-export default FavContextProvider
+export const useFavorite = () => {
+  return useContext(FavoriteContext);
+};

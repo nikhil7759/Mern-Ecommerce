@@ -1,40 +1,38 @@
-import Slider from "react-slick";
 import MenImage from "../../assets/Homepage/menslide.jpg";
 import WomenImage from "../../assets/Homepage/womenslide.jpg";
 import "./HpCarousel.css";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
-// Custom arrow components
-const PrevArrow = (props) => {
-  const { className, onClick } = props;
-  return <div className={className} onClick={onClick}></div>;
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 1,
+    slidesToSlide: 1 
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+    slidesToSlide: 2 
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+    slidesToSlide: 1 
+  }
 };
 
-const NextArrow = (props) => {
-  const { className, onClick } = props;
-  return <div className={className} onClick={onClick}></div>;
-};
-
-export default function SimpleSlider() {
-  const settings = {
-    dots: false, // Disable dots
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    prevArrow: <PrevArrow />, // Use custom left arrow
-    nextArrow: <NextArrow />, // Use custom right arrow
+const HpCarousel = ({ onSlideChange }) => {
+  const handleOnChange = (previousSlide, { currentSlide }) => {
+    onSlideChange(currentSlide);
   };
 
   return (
-    <div className="slider-container">
-      <Slider {...settings}>
-        <div>
-          <img src={MenImage} alt="Men Slide" />
-        </div>
-        <div>
-          <img src={WomenImage} alt="Women Slide" />
-        </div>
-      </Slider>
-    </div>
+    <Carousel responsive={responsive} afterChange={handleOnChange}>
+      <div><img className="img_set" src={MenImage} alt="Men's Collection" /></div>
+      <div><img className="img_set" src={WomenImage} alt="Women's Collection" /></div>
+    </Carousel>
   );
 }
+
+export default HpCarousel;

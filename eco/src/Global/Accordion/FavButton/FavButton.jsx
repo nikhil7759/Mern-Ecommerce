@@ -21,7 +21,7 @@ const FavButton = ({ item }) => {
   };
 
   return (
-      <IconButton onClick={handleClick} color="primary" className="fav-button">
+      <IconButton onClick={handleClick} color="red" className="fav-button">
           {isFavorited ? <FavoriteIcon /> : <FavoriteBorderIcon />}
       </IconButton>
   );

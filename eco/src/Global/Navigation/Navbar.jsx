@@ -1,10 +1,9 @@
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import SearchIcon from "@mui/icons-material/Search";
+
+
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import { FaBars } from "react-icons/fa";
-import { FaTimes } from "react-icons/fa";
+
 import Dropdownmenu from "../Dropdown/Dropdown";
 import { useCart } from "../../context/cart";
 import { useState } from "react";
@@ -25,7 +24,7 @@ const Navbar = () => {
         <div className="navbar-left">
           <div className="logo">
             <NavLink to="/" className="logo-link">
-              Male fashion<span className="logo-dot">.</span>
+              Fashion<span className="logo-dot">.</span>
             </NavLink>
           </div>
         </div>
@@ -66,24 +65,27 @@ const Navbar = () => {
         </div>
         <div className="navbar-right">
           <ul className="nav-icons">
-            <li className="nav-icon-item">
-              <NavLink to="/favourite">
-                <FavoriteIcon />
+            {/* <li className="nav-icon-item">
+              <NavLink to="/favourites">
+              <i class="bi bi-heart"></i>
               </NavLink>
-            </li>
+            </li> */}
             <li className="nav-icon-item">
               <NavLink to="/cart">
-                <ShoppingCartIcon />
-                <span className="badge">({getCartQuantity()})</span>
+               
+                <i className="bi bi-bag"></i>
+                <span className="badge">{getCartQuantity()}</span>
               </NavLink>
             </li>
             <li className="nav-icon-item">
               <Dropdownmenu />
             </li>
-          </ul>
-          <div className="mobile-menu">
-            <Sling toggled={menuOpen} toggle={setMenuOpen} />
+            <div className="mobile-menu">
+            <Sling  toggled={menuOpen} toggle={setMenuOpen} />
           </div>
+          </ul>
+          
+          
         </div>
         </div>
       </nav>

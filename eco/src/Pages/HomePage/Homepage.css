@@ -53,9 +53,10 @@
 .section_home {
   position: relative;
   /* Ensure the section contains the carousel and hero content */
-}
 
-.hero {
+}
+.hero
+ {
   position: absolute;
   top: 0;
   left: 7%;
@@ -74,7 +75,7 @@
 }
 .shopno{
   background: #000 !important;
-  padding: 10px !important;
+  padding: 10px ;
 }
 .letter{
   letter-spacing: 4px;
@@ -125,4 +126,74 @@ img.small-image {
 }
 .links {
   color: #000;
+}
+@media (max-width: 768px){
+  .section_home {
+
+    margin-top: 0px;
+    padding: 10px
+  }
+  .hero{
+    left: 0;
+    text-align: left;
+    padding: 25px;
+  }
+  .hero__text h6{
+    margin-bottom: 0;
+    font-size: 10px;
+  }
+  .hero__text h2{
+    font-size: 15px;
+    margin-bottom: 0;
+  }
+  .hero__text p{
+    font-size: 12px;
+    margin-bottom: 18px;
+  }
+  .hero__text{
+    max-width: 70%;
+  }
+  .letter{
+    font-size: 10px;
+  }
+  .image-rounded{
+    height: 320px!important;
+  }
+  .product__collection .left-content .product-entry {
+   width: 100%;
+  }
+  .product__collection .product-entry h3.item-title{
+    font-size: 30px;
+    text-align: center;
+  }
+  .btn-wrap {
+    text-align: center;
+}
+.product__collection .right-content .product-entry {
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  top: 40%;
+}
+.categoriess{
+  padding: 0 0 0 10px;
+  
+}
+.categories__text{
+  padding-top: 0!important;
+}
+.categories__deal__countdown span{
+  letter-spacing: 5px!important;
+}
+.categories__deal__countdown{
+  padding: 10px;
+  text-align: center;
+}
+.categories__deal__countdown h2{
+  margin-bottom: 0px;
+}
+
+}
+#collection{
+  margin-top: 30px;
 }

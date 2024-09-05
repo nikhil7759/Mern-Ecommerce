@@ -32,7 +32,9 @@ const DealCounter = () => {
                         <MyTime />
                        
                     </div>
+                    <div className="button__timer">
                     <Button variant="contained" className="shopno"><span className="letter">Shop now</span> </Button>
+                    </div>
                 </div>
             </div>
         </div>

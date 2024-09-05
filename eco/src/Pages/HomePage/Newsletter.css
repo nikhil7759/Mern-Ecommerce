@@ -66,3 +66,21 @@
 .notice {
 	width: 345px;
 }
+
+@media(max-width:768px){
+	.subscribe{
+		padding: 12px;
+		height: auto;
+	}
+	.subscribe__title{
+		font-size: 22px;
+	}
+	.form__email{
+		width: 100%;
+	}
+	.form__button{
+		width: 100%;
+		margin-left: 0;
+		margin-top: 20px;
+	}
+}
