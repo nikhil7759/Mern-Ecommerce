@@ -15,12 +15,13 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 // Connect to the database
 dataBaseConnection();
 
-// API Endpoints
+// Root route
+
 
 // Route to get all users with filters
-app.get("/api/users", async (req, res) => {
+app.get("/", async (req, res) => {
   try {
-    const { gender, color,categories } = req.query; // Extract query parameters
+    const { gender, color, categories } = req.query; // Extract query parameters
     let query = {};
     
     if (gender) {
@@ -43,9 +44,9 @@ app.get("/api/users", async (req, res) => {
 
 // Route to add a new user
 app.post("/api/users", async (req, res) => {
-  const { title, image, price, gender, color,categories } = req.body;
+  const { title, image, price, gender, color, categories } = req.body;
   try {
-    const newUser = new User({ title, image, price, gender, color,categories });
+    const newUser = new User({ title, image, price, gender, color, categories });
     await newUser.save();
     res.status(201).json(newUser);
   } catch (error) {

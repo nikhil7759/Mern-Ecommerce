@@ -32,7 +32,7 @@ const ItemList = ({ sortOption, priceRange, searchTerm, filters }) => {
 
         console.log(`Fetching with query: ${queryParams.toString()}`); // Debug log
 
-        const response = await fetch(`http://localhost:8000/api/users?${queryParams.toString()}`);
+        const response = await fetch(`http://localhost:8000/${queryParams.toString()}`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
