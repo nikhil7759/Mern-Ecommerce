@@ -41,7 +41,7 @@ const ItemList = ({ sortOption, priceRange, searchTerm, filters }) => {
           filters.color.forEach((color) => queryParams.append('color', color));
         }
 
-<<<<<<< HEAD
+
         if (filters.gender) {
           filters.gender.forEach((gender) => queryParams.append('gender', gender));
         }
@@ -52,10 +52,9 @@ const ItemList = ({ sortOption, priceRange, searchTerm, filters }) => {
 
         console.log(`Fetching with query: ${queryParams.toString()}`);
 
-        const response = await fetch(`https://mern-ecom-4uin.onrender.com/?${queryParams.toString()}`);
-=======
-        const response = await fetch(`http://localhost:8000/${queryParams.toString()}`);
->>>>>>> 05c8a0c49a832c75afca8b288a9425779d97d17b
+        const response = await fetch(`https://mern-ecom-4uin.onrender.com/?${queryParams.toString()}`)
+       
+      
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
