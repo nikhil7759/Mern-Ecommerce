@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const URL = "mongodb+srv://tejina5592:6TmX5JHzcEMvDMss@cluster0.mjnke.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const URL = "mongodb+srv://useyourown:6TmX5JHzcEMs@cluster0.mjnke.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 // Function to connect to the database
 export const dataBaseConnection = async () => {
