@@ -1,7 +1,7 @@
 prerequisite : React, Nodejs, Mongodb
-Firebase authentication
-Backend Hosted on Render
-Frontend Hosted on Netlify
+,Firebase authentication
+,Backend Hosted on Render
+,Frontend Hosted on Netlify
 
 Features:
 1. Multiple Filters
